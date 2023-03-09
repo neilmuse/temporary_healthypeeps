@@ -1,18 +1,30 @@
-import * as React from 'react';
-import { Avatar, Box, Button, CardMedia, Container, CssBaseline, Grid,  Link, TextField, Typography } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Outlet } from 'react-router-dom';
+import * as React from "react";
+import {
+  Avatar,
+  Box,
+  Button,
+  CardMedia,
+  Container,
+  CssBaseline,
+  Grid,
+  Link,
+  Typography,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Outlet } from "react-router-dom";
 
 import LOGIN_THEME from "../themes/login-theme";
-import COLORS from '../constants/colors.js'
+import COLORS from "../constants/colors.js";
+
+import TextField from "../components/text-field";
 
 const Feed = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get("email"),
+      password: data.get("password"),
     });
   };
 
@@ -24,12 +36,11 @@ const Feed = () => {
           <Box
             sx={{
               marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-
             <CardMedia
               component="img"
               height="140"
@@ -37,36 +48,28 @@ const Feed = () => {
               alt="recipe pic"
             />
 
-            <Typography variant="title">
-              Sign in
-            </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <Typography variant="title">Sign in</Typography>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
+            >
               <TextField
-                margin="normal"
                 required
-                fullWidth
-                id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
                 autoFocus
               />
               <TextField
-                margin="normal"
                 required
-                fullWidth
                 name="password"
                 label="Password"
                 type="password"
-                id="password"
                 autoComplete="current-password"
               />
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="outlined"
-              >
+              <Button type="submit" fullWidth variant="outlined">
                 Sign In
               </Button>
 
@@ -86,9 +89,10 @@ const Feed = () => {
           </Box>
         </Container>
       </ThemeProvider>
-      <Outlet/>
+      <Outlet />
     </>
   );
 };
 
 export default Feed;
+

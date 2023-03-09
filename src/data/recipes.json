@@ -3,7 +3,10 @@
     "title": "Beef Broccoli",
     "image": "https://picsum.photos/200",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "ingredients": ["a", "b", "c", "d", "e"],
+    "ingredients": [
+      { "quantity": 1, "units": "cup", "name": "rice" }
+      { "quantity": 1.5, "units": "cup", "name": "water" }
+    ],
     "createdAt": "2016-01-01T06:21:00.000",
     "author": {
       "name": "Luffy"
